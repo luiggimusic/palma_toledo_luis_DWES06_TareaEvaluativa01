@@ -29,16 +29,9 @@ class LoginMicroservicioController extends Controller
         return response()->json($response->json(), $response->status());
     }
 
-    public function updateUsername(Request $request)
+    public function update(Request $request)
     {
-        $url = "http://localhost:8080/api/login/updateUsername";
-        $data = $request->only(['id', 'username', 'password']); 
-        $response = Http::put($url, $data);
-        return response()->json($response->json(), $response->status());
-    }
-    public function updatePassword(Request $request)
-    {
-        $url = "http://localhost:8080/api/login/updatePassword";
+        $url = "http://localhost:8080/api/login/update";
         $data = $request->only(['id', 'username', 'password']); 
         $response = Http::put($url, $data);
         return response()->json($response->json(), $response->status());

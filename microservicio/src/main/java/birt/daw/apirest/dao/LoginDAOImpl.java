@@ -51,6 +51,4 @@ public class LoginDAOImpl implements LoginDAO {
 
 	    return existente;
 	}
-
-
 }

@@ -81,8 +81,7 @@ Route::post('movement/inventoryTransfer','App\Http\Controllers\MovementControlle
 Route::get('/login/get', [LoginMicroservicioController::class, 'getAllLogins']);
 Route::get('/login/get/{id}', [LoginMicroservicioController::class, 'getLoginById']);
 Route::post('/login/create', [LoginMicroservicioController::class, 'createLogin']);
-Route::put('/login/updateUsername', [LoginMicroservicioController::class, 'updateUsername']);
-Route::put('/login/updatePassword', [LoginMicroservicioController::class, 'updatePassword']);
+Route::put('/login/update', [LoginMicroservicioController::class, 'update']);
 Route::delete('/login/delete/{id}', [LoginMicroservicioController::class, 'deleteLogin']);
 
 

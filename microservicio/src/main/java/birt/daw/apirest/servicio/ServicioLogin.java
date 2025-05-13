@@ -11,7 +11,7 @@ public interface ServicioLogin {
 	
 	public Login save(Login login);
 	
-	public Login updatePassword(Login login);
+	public Login update(Login login);
 	
 	public Login deleteById(int id);
 	

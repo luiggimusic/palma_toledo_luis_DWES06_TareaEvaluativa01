@@ -38,7 +38,7 @@ public class ServicioLoginImpl implements ServicioLogin {
 	}
 	
 	@Override
-	public Login updatePassword(Login login) {
+	public Login update(Login login) {
 		return loginDAO.save(login);
 	}	
 	

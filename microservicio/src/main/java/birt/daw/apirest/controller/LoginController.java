@@ -53,19 +53,11 @@ public class LoginController {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
-	@PutMapping("/login/updateUsername")
-	public ResponseEntity<ApiResponse> updateLogin(@Valid @RequestBody Login userLogin) {
-		Login updatedLogin = loginServicio.save(userLogin);
+	@PutMapping("/login/update")
+	public ResponseEntity<ApiResponse> update(@Valid @RequestBody Login userLogin) {
+		Login updated = loginServicio.update(userLogin);
 		ApiResponse response = new ApiResponse("success", HttpStatus.OK.value(), "✅ Datos cargados correctamente",
-				List.of(updatedLogin));
-		return new ResponseEntity<>(response, HttpStatus.OK);
-	}
-
-	@PutMapping("/login/updatePassword")
-	public ResponseEntity<ApiResponse> updatePassword(@Valid @RequestBody Login userLogin) {
-		Login updatedPassword = loginServicio.updatePassword(userLogin);
-		ApiResponse response = new ApiResponse("success", HttpStatus.OK.value(), "✅ Datos cargados correctamente",
-				List.of(updatedPassword));
+				List.of(updated));
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
@@ -82,6 +74,5 @@ public class LoginController {
 		ApiResponse response = new ApiResponse("success", HttpStatus.OK.value(), "✅ Login eliminado correctamente",
 				loginDelete);
 		return new ResponseEntity<ApiResponse>(response, HttpStatus.OK);
-
 	}
 }
